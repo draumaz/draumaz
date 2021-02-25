@@ -1,1 +1,1 @@
-![Draumaz](https://github.com/draumaz/plains/blob/main/banner.png?raw=true?raw=true "Banner")
+![Draumaz](https://github.com/draumaz/draumaz/blob/main/banner.png?raw=true?raw=true "Banner")

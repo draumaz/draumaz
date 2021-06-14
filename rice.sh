@@ -13,7 +13,7 @@ wallpaper_get(){
 }
 
 workspace_setup(){
-	pacman -S xorg xinit i3 i3status i3lock dmenu feh pipewire pipewire-pulse git --noconfirm
+	pacman -S xorg xorg-xinit i3 i3status i3lock dmenu feh pipewire pipewire-pulse git --noconfirm
 	mkdir /home/samuel/.config
 	mkdir /home/samuel/.config/i3
 	mkdir /home/samuel/.config/i3status

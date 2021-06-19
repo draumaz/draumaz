@@ -14,8 +14,14 @@ general {
         interval = 5
 }
 
+order += "ethernet _first_"
 order += "battery all"
 order += "tztime local"
+
+ethernet _first_ {
+	format_up = "ETH: UP"
+	format_down = "ETH: DOWN"
+}
 
 battery all {
         format = "%status %percentage %remaining"

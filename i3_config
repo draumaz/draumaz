@@ -30,6 +30,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id telegram-desktop -startintray
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -50,7 +52,10 @@ bindsym $mod+g exec google-chrome-stable
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+Shift+p exec --no-startup-id i3lock -i /home/samuel/Downloads/tree.png
+bindsym $mod+Shift+p exec --no-startup-id i3lock -i /home/samuel/Images/tree.png
+
+# generate QR of clipboard
+bindsym $mod+x exec --no-startup-id qr
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run

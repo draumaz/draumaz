@@ -34,10 +34,10 @@ exec --no-startup-id telegram-desktop -startintray
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id mixer -s pcm +5 #pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id mixer -s pcm -5 #pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id mixer -s pcm 0 #pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id #pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -45,14 +45,17 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
 
-# open chrome
-bindsym $mod+g exec google-chrome-stable
+# open firefox
+bindsym $mod+f exec firefox
+
+# take a screenshot
+bindsym $mod+Shift+g exec --no-startup-id scrot -e 'mv $f ~/Images/'
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+Shift+p exec --no-startup-id i3lock -i /home/samuel/Images/tree.png
+bindsym $mod+Shift+p exec --no-startup-id i3lock -i /home/samuel/Images/sky.png
 
 # generate QR of clipboard
 bindsym $mod+x exec --no-startup-id qr
@@ -91,7 +94,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking

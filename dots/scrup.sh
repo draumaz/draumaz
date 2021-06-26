@@ -1,1 +1,1 @@
-sh /home/samuel/Scripts/i3boot.sh
+startx > /home/samuel/Logs/boot.log

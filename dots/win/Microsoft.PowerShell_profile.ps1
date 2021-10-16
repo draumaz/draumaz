@@ -5,15 +5,17 @@
 Set-Alias -Name nvim -Value "C:\tools\neovim\Neovim\bin\nvim.exe"
 Set-Alias -Name sudo -Value "C:\ProgramData\chocolatey\lib\gsudo\bin\sudo.exe"
 
+# Redirect to OneDrive
+
+Set-Location "C:\Users\samfo\OneDrive"
+
 # Prompt functions
 
 function isRoot {
         $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
-        $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-}
+        $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)}
 
 function getName {
-        Write-Host "[" -NoNewLine
         if (isRoot = $true) {
                 Write-Host "admin" -NoNewLine
         } else {
@@ -22,7 +24,8 @@ function getName {
 }
 
 function prompt {
+        Write-Host "[" -NoNewLine
         getName
-        Write-Host "@$(hostname) ~ $(Get-Location)]:" -NoNewLine
+        Write-Host "@G5 ~ $(Get-Location)]:" -NoNewLine
         return " "
 }

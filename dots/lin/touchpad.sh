@@ -14,3 +14,4 @@ echo -n "Configuring mouse..."
 xinput set-prop $ms 309 -1 > file 2>&1
 echo -n "."
 echo "done"
+rm file

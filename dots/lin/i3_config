@@ -16,7 +16,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d amdgpu_bl1 s 1
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d amdgpu_bl1 s 10-
 
 exec --no-startup-id bash /home/samuel/Scripts/touchpad.sh
-exec --no-startup-id xinput set-prop 10 309 -1
 exec --no-startup-id setxkbmap us alt-intl
 exec --no-startup-id feh --bg-scale /home/samuel/Images/Wallpapers/trees.png
 exec --no-startup-id picom -c -b

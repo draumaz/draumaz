@@ -1,3 +1,7 @@
+# Dependencies
+# ttf-monospace ttf-dejavu i3status i3-gaps i3lock dmenu
+# bash setxkbmap feh picom xfce4-terminal librewolf scrot
+
 # Modkey
 set $mod Mod4
 

@@ -15,6 +15,7 @@ general {
 }
 
 order += "ethernet _first_"
+order += "memory"
 order += "battery all"
 order += "tztime local"
 
@@ -23,10 +24,14 @@ ethernet _first_ {
 	format_down = "ETH: DOWN"
 }
 
+memory {
+	format = "%used"
+}
+
 battery all {
         format = "%status %percentage %remaining"
 }
 
 tztime local {
-        format = "%m-%d-%y %I:%M"
+        format = "%a %m-%d-%y %I:%M"
 }
